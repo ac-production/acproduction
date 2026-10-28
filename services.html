@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios | A.C Production</title>
+  <meta name="description" content="Servicios de A.C Production: edición para redes, subtítulos, motion graphics y contenido para marcas.">
+  <style>
+    :root {
+      --bg: #0a0c0b;
+      --panel: #121614;
+      --line: #1f2623;
+      --text: #f2f4f1;
+      --muted: #9aa39e;
+      --green: #2fa35f;
+      --green-soft: #7fd3a0;
+      --orange: #d9893a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { font-weight: 700; letter-spacing: 0.5px; color: var(--text); text-decoration: none; }
+    .brand span { color: var(--green); }
+    nav a {
+      color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 14px;
+    }
+    nav a:hover { color: var(--green-soft); }
+    .intro { max-width: 1100px; margin: 0 auto; padding: 56px 24px 16px; }
+    .intro h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.1; }
+    .intro h1 span { color: var(--green); }
+    .intro p { color: var(--muted); margin-top: 16px; font-size: 18px; max-width: 640px; }
+    section { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+    .service {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+      padding: 32px; margin-bottom: 20px;
+    }
+    .service h2 { font-size: 24px; margin-bottom: 8px; color: var(--green-soft); }
+    .service > p { color: var(--muted); }
+    .service h3 { font-size: 15px; margin: 20px 0 8px; color: var(--text); text-transform: uppercase; letter-spacing: 1px; }
+    .service ul { list-style: none; color: var(--muted); }
+    .service li { padding-left: 20px; position: relative; margin-bottom: 6px; }
+    .service li::before { content: "•"; color: var(--green); position: absolute; left: 0; }
+    .cta-box {
+      text-align: center; background: var(--panel); border: 1px solid var(--line);
+      border-radius: 20px; padding: 40px 24px;
+    }
+    .cta-box p { color: var(--muted); margin: 12px 0 0; }
+    .cta {
+      display: inline-block; margin-top: 24px;
+      background: var(--green); color: #04110a; font-weight: 700;
+      padding: 14px 26px; border-radius: 999px; text-decoration: none;
+    }
+    .cta:hover { background: var(--green-soft); }
+    .cta-box .accent { color: var(--orange); }
+    footer {
+      text-align: center; color: var(--muted); font-size: 13px; padding: 32px 24px;
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--muted); }
+    footer .accent { color: var(--orange); }
+    @media (max-width: 600px) {
+      nav a { margin-left: 12px; }
+      header { padding: 14px 16px; }
+      .service { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">A.C <span>PRODUCTION</span></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    <h1>Servicios para <span>marcas y negocios</span> que quieren crecer en redes.</h1>
+    <p>Editamos tu material para que se vea profesional, se entienda rápido y esté listo para publicar en cada plataforma.</p>
+  </div>
+
+  <section>
+    <div class="service">
+      <h2>Edición para redes</h2>
+      <p>Cortes dinámicos para Reels, TikTok y Shorts, con ritmo y retención.</p>
+      <h3>Incluye</h3>
+      <ul>
+        <li>Limpieza del material: pausas, muletillas y repeticiones.</li>
+        <li>Ritmo pensado para mantener la atención desde los primeros segundos.</li>
+        <li>Formato vertical listo para cada plataforma.</li>
+      </ul>
+      <h3>Para quién</h3>
+      <p>Gimnasios, negocios locales y emprendedores que ya grabaron su contenido y necesitan que quede bien editado.</p>
+    </div>
+
+    <div class="service">
+      <h2>Subtítulos</h2>
+      <p>Subtítulos legibles con palabras clave resaltadas, en el idioma de tu audiencia.</p>
+      <h3>Incluye</h3>
+      <ul>
+        <li>Subtítulos sincronizados con el audio.</li>
+        <li>Palabras clave resaltadas para reforzar el mensaje.</li>
+        <li>Revisión del texto antes de entregar.</li>
+      </ul>
+      <h3>Para quién</h3>
+      <p>Cualquier video que se ve sin sonido, que es la mayoría de los casos en redes.</p>
+    </div>
+
+    <div class="service">
+      <h2>Motion graphics</h2>
+      <p>Títulos animados, gráficos y transiciones que refuerzan tu mensaje sin distraer.</p>
+      <h3>Incluye</h3>
+      <ul>
+        <li>Títulos y textos animados.</li>
+        <li>Gráficos y transiciones con la identidad de tu marca.</li>
+        <li>Animaciones sencillas que no restan protagonismo al contenido.</li>
+      </ul>
+      <h3>Para quién</h3>
+      <p>Marcas y negocios que quieren una imagen más pulida en sus videos.</p>
+    </div>
+
+    <div class="service">
+      <h2>Contenido para marcas</h2>
+      <p>Videos de producto, servicios y casos de clientes, con guion y formato para cada plataforma.</p>
+      <h3>Incluye</h3>
+      <ul>
+        <li>Guion y planificación del video según tu objetivo.</li>
+        <li>Formatos para cada red social.</li>
+        <li>Videos de producto, servicios y casos de clientes, con autorización.</li>
+      </ul>
+      <h3>Para quién</h3>
+      <p>Emprendedores y negocios que no tienen cómo producir su contenido audiovisual y quieren hacerlo bien desde el inicio.</p>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="cta-box">
+      <h2>¿Quieres una propuesta?</h2>
+      <p>Cuéntanos tu objetivo, tu público y el material que tienes. Te respondemos con alcance, plazos y precio.</p>
+      <a class="cta" href="https://wa.me/50660020388" target="_blank" rel="noopener">Pedir una cotización por WhatsApp</a>
+      <p class="accent">WhatsApp: 6002-0388 · acproduction.contacto@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    © A.C Production. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
