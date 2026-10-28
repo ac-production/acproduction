@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A.C Production | Edición de video para marcas</title>
+  <meta name="description" content="A.C Production: edición, subtítulos y contenido audiovisual para redes sociales.">
+  <style>
+    :root {
+      --bg: #0a0c0b;
+      --panel: #121614;
+      --line: #1f2623;
+      --text: #f2f4f1;
+      --muted: #9aa39e;
+      --green: #2fa35f;
+      --green-soft: #7fd3a0;
+      --orange: #d9893a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { font-weight: 700; letter-spacing: 0.5px; }
+    .brand span { color: var(--green); }
+    nav a {
+      color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 14px;
+    }
+    nav a:hover { color: var(--green-soft); }
+    .hero {
+      display: grid; grid-template-columns: 1fr; gap: 32px;
+      padding: 48px 24px 64px;
+      max-width: 1100px; margin: 0 auto;
+      align-items: center;
+    }
+    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; }
+    .hero h1 span { color: var(--green); }
+    .hero p { color: var(--muted); margin-top: 16px; font-size: 18px; max-width: 540px; }
+    .cta {
+      display: inline-block; margin-top: 24px;
+      background: var(--green); color: #04110a; font-weight: 700;
+      padding: 14px 26px; border-radius: 999px; text-decoration: none;
+    }
+    .cta:hover { background: var(--green-soft); }
+    .logo-box {
+      width: 100%; max-width: 360px; margin: 0 auto;
+      border-radius: 18px; overflow: hidden; background: #000;
+      aspect-ratio: 9 / 12;
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wordmark { font-size: 56px; font-weight: 800; letter-spacing: 2px; text-align: center; line-height: 1.05; }
+    .wordmark span { color: var(--green); font-size: 28px; letter-spacing: 6px; }
+    section { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
+    section h2 { font-size: 28px; margin-bottom: 8px; }
+    .lead { color: var(--muted); margin-bottom: 28px; }
+    .grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+    }
+    .card h3 { font-size: 18px; margin-bottom: 8px; color: var(--green-soft); }
+    .card p { color: var(--muted); font-size: 15px; }
+    .steps { counter-reset: step; list-style: none; }
+    .steps li {
+      counter-increment: step; position: relative;
+      padding: 14px 14px 14px 56px; margin-bottom: 10px;
+      background: var(--panel); border: 1px solid var(--line); border-radius: 12px; color: var(--muted);
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: 16px; top: 12px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--green); color: #04110a; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact {
+      text-align: center; background: var(--panel); border: 1px solid var(--line);
+      border-radius: 20px; padding: 40px 24px;
+    }
+    .contact p { color: var(--muted); margin: 12px 0 0; }
+    .contact .phone { color: var(--text); font-weight: 700; font-size: 20px; margin-top: 20px; }
+    .contact .accent { color: var(--orange); }
+    footer {
+      text-align: center; color: var(--muted); font-size: 13px; padding: 32px 24px;
+      border-top: 1px solid var(--line);
+    }
+    footer .accent { color: var(--orange); }
+    @media (min-width: 800px) {
+      .hero { grid-template-columns: 1.2fr 1fr; padding-top: 72px; }
+    }
+    @media (max-width: 600px) {
+      nav a { margin-left: 12px; }
+      header { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">A.C <span>PRODUCTION</span></div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Videos que <span>detienen el scroll</span> y se entienden en segundos.</h1>
+      <p>Edición, subtítulos y contenido audiovisual para marcas y negocios que quieren crecer en redes sociales.</p>
+      <a class="cta" href="https://wa.me/50660020388" target="_blank" rel="noopener">Pedir una cotización por WhatsApp</a>
+    </div>
+    <div class="logo-box">
+      <div class="wordmark">A.C<br><span>PRODUCTION</span></div>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p class="lead">Lo que hacemos para tu marca en cada plataforma.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Edición para redes</h3>
+        <p>Cortes dinámicos para Reels, TikTok y Shorts, con ritmo y retención.</p>
+      </div>
+      <div class="card">
+        <h3>Subtítulos</h3>
+        <p>Subtítulos legibles con palabras clave resaltadas, en el idioma de tu audiencia.</p>
+      </div>
+      <div class="card">
+        <h3>Motion graphics</h3>
+        <p>Títulos animados, gráficos y transiciones que refuerzan tu mensaje sin distraer.</p>
+      </div>
+      <div class="card">
+        <h3>Contenido para marcas</h3>
+        <p>Videos de producto, servicios y casos de clientes, con guion y formato para cada plataforma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <h2>Cómo trabajamos</h2>
+    <p class="lead">Un proceso simple, con revisión antes de cada entrega.</p>
+    <ol class="steps">
+      <li>Nos cuentas tu objetivo, tu público y el material que tienes.</li>
+      <li>Te enviamos una propuesta con alcance, plazos y precio.</li>
+      <li>Editamos y te mostramos una primera versión para revisar.</li>
+      <li>Hacemos los cambios acordados y entregamos los archivos listos para publicar.</li>
+    </ol>
+  </section>
+
+  <section id="contacto">
+    <div class="contact">
+      <h2>¿Listo para empezar?</h2>
+      <p>Escríbenos por WhatsApp y te respondemos con una propuesta.</p>
+      <p class="phone">WhatsApp: 6002-0388</p>
+      <p><a class="accent" href="mailto:acproduction.contacto@gmail.com">acproduction.contacto@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © A.C Production. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
