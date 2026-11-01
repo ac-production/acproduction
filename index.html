@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A.C Productions | Edición de video para marcas</title>
-  <meta name="description" content="A.C Productions: edición, subtítulos y contenido audiovisual para redes sociales.">
+  <meta name="description" content="A.C Productions: edición, subtítulos y paquetes mensuales de reels para negocios en Costa Rica. Diagnóstico gratis y precios claros.">
   <style>
     :root {
       --bg: #0a0c0b;
@@ -25,17 +25,17 @@
     }
     header {
       position: sticky; top: 0; z-index: 10;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
       padding: 16px 24px;
       background: rgba(10, 12, 11, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
     .brand img { height: 40px; width: auto; display: block; }
-    nav a {
-      color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 14px;
-    }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 14px; }
     nav a:hover { color: var(--green-soft); }
+    .translate { display: flex; align-items: center; }
+    #google_translate_element .goog-te-gadget { font-size: 12px; color: var(--muted); }
     .hero {
       display: grid; grid-template-columns: 1fr; gap: 32px;
       padding: 48px 24px 64px;
@@ -45,12 +45,18 @@
     .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; }
     .hero h1 span { color: var(--green); }
     .hero p { color: var(--muted); margin-top: 16px; font-size: 18px; max-width: 540px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
     .cta {
-      display: inline-block; margin-top: 24px;
+      display: inline-block;
       background: var(--green); color: #04110a; font-weight: 700;
       padding: 14px 26px; border-radius: 999px; text-decoration: none;
     }
     .cta:hover { background: var(--green-soft); }
+    .btn-outline {
+      display: inline-block; padding: 13px 24px; border: 1px solid var(--green); border-radius: 999px;
+      color: var(--green-soft); text-decoration: none; font-weight: 700;
+    }
+    .btn-outline:hover { background: var(--panel); }
     .logo-box {
       width: 100%; max-width: 360px; margin: 0 auto;
       border-radius: 18px; overflow: hidden; background: #000;
@@ -71,6 +77,18 @@
     }
     .card h3 { font-size: 18px; margin-bottom: 8px; color: var(--green-soft); }
     .card p { color: var(--muted); font-size: 15px; }
+    details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    summary { cursor: pointer; color: var(--green-soft); font-weight: 700; font-size: 14px; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: " +"; }
+    details[open] summary::after { content: " −"; }
+    details ul { list-style: none; margin-top: 10px; color: var(--muted); font-size: 14px; }
+    details li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    details li strong { color: var(--text); }
+    table { width: 100%; border-collapse: collapse; color: var(--muted); font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    th { color: var(--green-soft); font-weight: 700; }
+    .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
     .steps { counter-reset: step; list-style: none; }
     .steps li {
       counter-increment: step; position: relative;
@@ -84,6 +102,12 @@
       background: var(--green); color: #04110a; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
     }
+    .note {
+      border-left: 3px solid var(--green); padding: 12px 16px; color: var(--muted);
+      background: var(--panel); border-radius: 0 12px 12px 0; font-size: 14px; margin-top: 20px;
+    }
+    .form-cta { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .form-cta p { color: var(--muted); margin-bottom: 4px; }
     .contact {
       text-align: center; background: var(--panel); border: 1px solid var(--line);
       border-radius: 20px; padding: 40px 24px;
@@ -91,17 +115,15 @@
     .contact p { color: var(--muted); margin: 12px 0 0; }
     .contact .phone { color: var(--text); font-weight: 700; font-size: 20px; margin-top: 20px; }
     .contact .accent { color: var(--orange); }
+    .clips { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .clips video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: #000; }
     footer {
       text-align: center; color: var(--muted); font-size: 13px; padding: 32px 24px;
       border-top: 1px solid var(--line);
     }
-    footer .accent { color: var(--orange); }
-    .clips { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    .clips video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: #000; }
+    footer a { color: var(--green-soft); }
     @media (min-width: 800px) {
       .clips { grid-template-columns: 1.6fr 1fr; align-items: center; }
-    }
-    @media (min-width: 800px) {
       .hero { grid-template-columns: 1.2fr 1fr; padding-top: 72px; }
     }
     @media (max-width: 600px) {
@@ -115,16 +137,21 @@
     <a class="brand" href="index.html"><img src="logo-ac-texto-blanco.png" alt="A.C Productions"></a>
     <nav>
       <a href="#servicios">Servicios</a>
+      <a href="#diagnostico">Diagnóstico gratis</a>
       <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <div id="google_translate_element" class="translate"></div>
   </header>
 
   <div class="hero">
     <div>
       <h1>Videos que <span>detienen el scroll</span> y se entienden en segundos.</h1>
-      <p>Edición, subtítulos y contenido audiovisual para marcas y negocios que quieren crecer en redes sociales.</p>
-      <a class="cta" href="https://wa.me/50660020388" target="_blank" rel="noopener">Pedir una cotización por WhatsApp</a>
+      <p>Edición, subtítulos y reels mensuales para marcas y negocios que quieren crecer en redes sociales.</p>
+      <div class="actions">
+        <a class="cta" href="https://wa.me/50660020388?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20marca." target="_blank" rel="noopener">Diagnóstico gratis</a>
+        <a class="btn-outline" href="https://wa.me/50660020388?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Cotizar</a>
+      </div>
     </div>
     <div class="logo-box">
       <video src="video-ac-nuevo.mp4" autoplay muted loop playsinline></video>
@@ -133,26 +160,80 @@
 
   <section id="servicios">
     <h2>Servicios</h2>
-    <p class="lead">Lo que hacemos para tu marca en cada plataforma.</p>
+    <p class="lead">Lo que hacemos para tu marca en cada plataforma. Los precios están en cada servicio.</p>
     <div class="grid">
       <div class="card">
-        <h3>Edición para redes</h3>
-        <p>Cortes dinámicos para Reels, TikTok y Shorts, con ritmo y retención.</p>
+        <h3>Paquetes mensuales de reels</h3>
+        <p>Reels para Instagram, TikTok y Shorts, con ritmo, subtítulos y entrega lista para publicar.</p>
+        <details>
+          <summary>Ver precios</summary>
+          <ul>
+            <li><strong>₡50.000</strong> al mes · 4 reels (mínimo)</li>
+            <li><strong>₡62.500</strong> al mes · 5 reels</li>
+            <li><strong>₡100.000</strong> al mes · 8 reels</li>
+            <li><strong>₡125.000</strong> al mes · 10 reels</li>
+            <li><strong>₡150.000</strong> al mes · 12 reels</li>
+          </ul>
+          <p class="note">Cada reel cuesta ₡12.500, sin importar cuántos contrates.</p>
+        </details>
       </div>
       <div class="card">
-        <h3>Subtítulos</h3>
-        <p>Subtítulos legibles con palabras clave resaltadas, en el idioma de tu audiencia.</p>
+        <h3>Edición de material del cliente</h3>
+        <p>Tú nos das las grabaciones y nosotros las editamos. Se cotiza según cantidad, duración y complejidad.</p>
+        <details>
+          <summary>Ver precio</summary>
+          <ul>
+            <li>Cotización según el material</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
-        <h3>Motion graphics</h3>
-        <p>Títulos animados, gráficos y transiciones que refuerzan tu mensaje sin distraer.</p>
+        <h3>Gestión de redes</h3>
+        <p>Programamos, publicamos y redactamos los textos de tus redes. Se suma a cualquier paquete.</p>
+        <details>
+          <summary>Ver precio</summary>
+          <ul>
+            <li><strong>₡50.000</strong> al mes, adicionales, según el alcance acordado</li>
+          </ul>
+        </details>
       </div>
       <div class="card">
-        <h3>Contenido para marcas</h3>
-        <p>Videos de producto, servicios y casos de clientes, con guion y formato para cada plataforma.</p>
+        <h3>Subtítulos y motion graphics</h3>
+        <p>Subtítulos legibles, títulos animados y transiciones con la identidad de tu marca.</p>
+        <details>
+          <summary>Ver precio</summary>
+          <ul>
+            <li>Cotización según el video</li>
+          </ul>
+        </details>
       </div>
     </div>
-    <p style="margin-top:24px"><a href="services.html" style="color:var(--green-soft);text-decoration:none">Ver el detalle de cada servicio →</a></p>
+  </section>
+
+  <section id="diagnostico">
+    <h2>Diagnóstico gratis</h2>
+    <p class="lead">Revisamos tu contenido actual y te decimos qué cambiar para que se vea y se entienda mejor.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Qué incluye</h3>
+        <p>Revisión de tus videos actuales, ritmo, subtítulos y gancho, con recomendaciones concretas.</p>
+      </div>
+      <div class="card">
+        <h3>Cómo pedirlo</h3>
+        <p>Escríbenos por WhatsApp con tu negocio y el enlace a tu cuenta, y te respondemos para coordinar.</p>
+        <a class="cta" style="margin-top:14px" href="https://wa.me/50660020388?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20marca." target="_blank" rel="noopener">Pedir diagnóstico gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario">
+    <h2>Cuéntanos sobre tu marca</h2>
+    <p class="lead">Responde unas preguntas y te escribimos con una propuesta según tu caso.</p>
+    <div class="form-cta">
+      <p>Llena el formulario en Google. Toma unos 3 minutos.</p>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfmva1INFGcokKATFIay-b0mgKy60MyqEmHgxvIoYADeaA4oQ/viewform" target="_blank" rel="noopener">Abrir el formulario</a>
+    </div>
+    <p class="note">Tus datos solo se usan para responderte. Lee la <a href="privacidad.html" style="color:var(--green-soft)">política de privacidad</a>.</p>
   </section>
 
   <section id="proceso">
@@ -196,7 +277,14 @@
   </section>
 
   <footer>
-    © A.C Productions. Todos los derechos reservados.
+    © A.C Productions. Todos los derechos reservados. · <a href="privacidad.html">Política de privacidad</a>
   </footer>
+
+  <script>
+    function gtInit() {
+      new google.translate.TranslateElement({ pageLanguage: "es", includedLanguages: "en,es", autoDisplay: false }, "google_translate_element");
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=gtInit"></script>
 </body>
 </html>
