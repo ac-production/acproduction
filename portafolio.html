@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio | A.C Productions</title>
+  <meta name="description" content="Portafolio de A.C Productions: videos de edición, subtítulos y reels para marcas y negocios.">
+  <style>
+    :root {
+      --bg: #0a0c0b;
+      --panel: #121614;
+      --line: #1f2623;
+      --text: #f2f4f1;
+      --muted: #9aa39e;
+      --green: #2fa35f;
+      --green-soft: #7fd3a0;
+      --orange: #d9893a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 16px 24px;
+      background: rgba(10, 12, 11, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    header .brand img { height: 36px; display: block; }
+    header nav a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 15px; }
+    header nav a:hover { color: var(--green-soft); }
+    .translate { font-size: 13px; max-width: 170px; overflow: hidden; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 56px 24px 32px; }
+    h1 { font-size: 40px; line-height: 1.15; margin-bottom: 12px; }
+    h1 span { color: var(--green-soft); }
+    .lead { color: var(--muted); font-size: 17px; max-width: 640px; margin-bottom: 36px; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .filters button {
+      background: var(--panel); color: var(--text);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 16px; font-size: 14px; cursor: pointer;
+    }
+    .filters button.active { border-color: var(--green); color: var(--green-soft); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 20px; }
+    .item {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 16px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .frame { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; }
+    .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .link-card {
+      aspect-ratio: 9 / 16; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      padding: 24px; text-align: center; background: linear-gradient(160deg, #161c19, #0a0c0b);
+    }
+    .link-card .platform { color: var(--green-soft); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .link-card a.watch {
+      background: var(--green); color: #fff; text-decoration: none;
+      padding: 10px 20px; border-radius: 999px; font-weight: 600;
+    }
+    .info { padding: 16px 18px 20px; }
+    .info .tag { font-size: 12px; color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; }
+    .info h2 { font-size: 18px; margin: 6px 0 4px; }
+    .info p { color: var(--muted); font-size: 14px; }
+    .info a.open { display: inline-block; margin-top: 10px; color: var(--green-soft); font-size: 14px; }
+
+    .empty { color: var(--muted); padding: 40px 0; text-align: center; border: 1px dashed var(--line); border-radius: 16px; }
+
+    .cta-box { margin-top: 56px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 28px; text-align: center; }
+    .cta-box a {
+      display: inline-block; margin-top: 12px; background: var(--green); color: #fff;
+      text-decoration: none; padding: 12px 24px; border-radius: 999px; font-weight: 600;
+    }
+
+    footer { text-align: center; padding: 32px 24px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+    footer a { color: var(--green-soft); }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 30px; }
+      header { padding: 14px 16px; }
+      header nav a { margin-left: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="index.html"><img src="logo-ac-texto-blanco.png" alt="A.C Productions"></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="portafolio.html">Portafolio</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <div id="google_translate_element" class="translate"></div>
+  </header>
+
+  <main>
+    <h1>Nuestro <span>portafolio</span></h1>
+    <p class="lead">Videos reales de edición, subtítulos y reels. Toca un video para verlo en su plataforma.</p>
+
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+
+    <div class="cta-box">
+      <p>¿Quieres un video así para tu marca?</p>
+      <a href="https://wa.me/50660020388?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20marca." target="_blank" rel="noopener">Diagnóstico gratis</a>
+    </div>
+  </main>
+
+  <footer>
+    © A.C Productions. Todos los derechos reservados. · <a href="privacidad.html">Política de privacidad</a>
+  </footer>
+
+  <script>
+    // ============================================================
+    // PORTAFOLIO: agrega un objeto por video. Solo cambia esta lista.
+    //   titulo    -> nombre corto del video
+    //   categoria -> "Reels", "TikTok", "Subtítulos", "Motion", "Marca", etc.
+    //   url       -> enlace completo (YouTube, Vimeo, Instagram, TikTok, Drive)
+    //   cliente   -> opcional: nombre del cliente o marca
+    // ============================================================
+    const VIDEOS = [
+      { titulo: "Dulces Momentos: video 1", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVm3rk/" },
+      { titulo: "Dulces Momentos: video 2", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVCSgR/" },
+      { titulo: "Fiesta de fin de año", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVX8w6/" },
+      { titulo: "Dulces Momentos: video 3", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVC6jL/" },
+      { titulo: "Sabores de muchos países", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVxY8k/" },
+      { titulo: "Detalles para mamá", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVfdGE/" },
+      { titulo: "Botas navideñas", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFVSD4V/" },
+      { titulo: "Conoce al equipo", categoria: "Comercio local", cliente: "Dulces Momentos", url: "https://vt.tiktok.com/ZSpFqRAW3/" },
+      { titulo: "Diagnóstico eléctrico", categoria: "Servicios", cliente: "Taller Eléctrico Automotriz Arias", url: "https://www.facebook.com/share/v/1A1ZAU4BF2/?mibextid=wwXIfr" },
+      { titulo: "5 pasos para no lastimarte los tobillos", categoria: "Fitness", cliente: "Chema Coach", url: "https://www.instagram.com/reel/DfV63x-O0R7/" },
+      { titulo: "Entrevista en Elite Fitness Gym", categoria: "Fitness", cliente: "Chema Coach", url: "https://www.instagram.com/reel/DfL4n20uGDw/" },
+    ];
+
+    // Convierte un enlace de YouTube o Vimeo en su versión incrustable.
+    function embedUrl(url) {
+      try {
+        const u = new URL(url);
+        const host = u.hostname.replace("www.", "");
+        if (host === "youtu.be") return "https://www.youtube.com/embed/" + u.pathname.slice(1);
+        if (host === "youtube.com" || host === "m.youtube.com") {
+          if (u.pathname === "/watch") return "https://www.youtube.com/embed/" + u.searchParams.get("v");
+          const parts = u.pathname.split("/").filter(Boolean);
+          if (parts[0] === "shorts" || parts[0] === "embed") return "https://www.youtube.com/embed/" + parts[1];
+        }
+        if (host === "vimeo.com") {
+          const id = u.pathname.split("/").filter(Boolean).pop();
+          if (/^\d+$/.test(id)) return "https://player.vimeo.com/video/" + id;
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    function platformName(url) {
+      if (/instagram\.com/.test(url)) return "Instagram";
+      if (/tiktok\.com/.test(url)) return "TikTok";
+      if (/drive\.google\.com/.test(url)) return "Google Drive";
+      if (/youtu/.test(url)) return "YouTube";
+      if (/vimeo\.com/.test(url)) return "Vimeo";
+      return "Ver video";
+    }
+
+    let activeFilter = "Todos";
+
+    function renderFilters() {
+      const cats = ["Todos", ...new Set(VIDEOS.map(v => v.categoria).filter(Boolean))];
+      const box = document.getElementById("filters");
+      box.innerHTML = "";
+      cats.forEach(cat => {
+        const b = document.createElement("button");
+        b.textContent = cat;
+        if (cat === activeFilter) b.classList.add("active");
+        b.addEventListener("click", () => { activeFilter = cat; renderFilters(); renderGrid(); });
+        box.appendChild(b);
+      });
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      const list = VIDEOS.filter(v => activeFilter === "Todos" || v.categoria === activeFilter);
+      if (list.length === 0) {
+        grid.innerHTML = '<div class="empty">Pronto subiremos nuevos videos aquí.</div>';
+        return;
+      }
+      list.forEach(v => {
+        const item = document.createElement("article");
+        item.className = "item";
+
+        const embed = embedUrl(v.url);
+        const frame = document.createElement("div");
+        if (embed) {
+          frame.className = "frame";
+          const iframe = document.createElement("iframe");
+          iframe.src = embed;
+          iframe.title = v.titulo;
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
+          iframe.allowFullscreen = true;
+          frame.appendChild(iframe);
+        } else {
+          frame.className = "link-card";
+          frame.innerHTML =
+            '<div class="platform">' + platformName(v.url) + '</div>' +
+            '<a class="watch" href="' + v.url + '" target="_blank" rel="noopener">Ver video</a>';
+        }
+        item.appendChild(frame);
+
+        const info = document.createElement("div");
+        info.className = "info";
+        info.innerHTML =
+          (v.categoria ? '<div class="tag">' + v.categoria + '</div>' : '') +
+          '<h2></h2>' +
+          (v.cliente ? '<p></p>' : '') +
+          (embed ? '<a class="open" href="' + v.url + '" target="_blank" rel="noopener">Abrir en ' + platformName(v.url) + ' →</a>' : '');
+        info.querySelector("h2").textContent = v.titulo;
+        if (v.cliente) info.querySelector("p").textContent = v.cliente;
+        item.appendChild(info);
+
+        grid.appendChild(item);
+      });
+    }
+
+    renderFilters();
+    renderGrid();
+
+    function gtInit() {
+      new google.translate.TranslateElement({ pageLanguage: "es", includedLanguages: "en,es", autoDisplay: false }, "google_translate_element");
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=gtInit"></script>
+</body>
+</html>
